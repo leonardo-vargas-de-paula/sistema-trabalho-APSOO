@@ -24,8 +24,8 @@ public class TestTabelaTeste {
 //            System.out.println("Descrição = " + tt.getDescricao());
 //        }
 
-    TabelaTesteDAO dao = new TabelaTesteDAO();
-    dao.remove(1);
+//    TabelaTesteDAO dao = new TabelaTesteDAO();
+//    dao.remove(1);
 
 
     }

@@ -1,12 +1,11 @@
 package sistema.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 @Entity
-public class Funcionario extends Usuario{
+public class Funcionario{
     private String nome;
+    @Id
     private String cpf;
     private String telefone;
     private Double salario;
@@ -44,5 +43,13 @@ public class Funcionario extends Usuario{
 
     public void setSalario(Double salario) {
         this.salario = salario;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

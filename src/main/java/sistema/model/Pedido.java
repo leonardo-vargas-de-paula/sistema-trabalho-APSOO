@@ -1,9 +1,6 @@
 package sistema.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Pedido {
@@ -13,6 +10,9 @@ public class Pedido {
     private String tipo;
     private Double preco;
     private String status;
+    @ManyToOne
+    @JoinColumn(name = "cliente_fk", referencedColumnName = "id")
+    private Cliente cliente;
 
     public Integer getIdPedido() {
         return idPedido;
@@ -44,5 +44,13 @@ public class Pedido {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }

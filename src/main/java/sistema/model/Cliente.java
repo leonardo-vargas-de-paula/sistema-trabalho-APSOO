@@ -1,7 +1,11 @@
 package sistema.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
 
 @Entity
 public class Cliente {
@@ -9,6 +13,8 @@ public class Cliente {
     private String id;
     private String nome;
     private String telefone;
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private List<Pedido> pedidos;
 
     public String getId() {
         return id;
@@ -33,4 +39,5 @@ public class Cliente {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
 }

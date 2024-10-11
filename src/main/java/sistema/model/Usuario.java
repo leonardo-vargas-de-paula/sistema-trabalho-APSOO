@@ -2,11 +2,12 @@ package sistema.model;
 
 import jakarta.persistence.*;
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario {
     @Id
     private String id;
     private String senha;
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private Funcionario funcionario;
 
     public String getId() {
         return id;
@@ -22,5 +23,13 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
 }
