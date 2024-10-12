@@ -1,3 +1,5 @@
+import sistema.model.Pedido;
+
 public class Caixa {
 
 	private List historicoDeTransacoes;

@@ -1,3 +1,5 @@
+import sistema.model.Funcionario;
+
 public class Gerentte extends Funcionario implements RelatorioGenerator, EstoqueManager {
 
 	private Relatorio[] relatorio;

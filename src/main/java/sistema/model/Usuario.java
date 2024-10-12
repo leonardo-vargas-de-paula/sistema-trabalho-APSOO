@@ -1,27 +1,34 @@
+package sistema.model;
+
+import jakarta.persistence.*;
+@Entity
 public class Usuario {
-
-	private String ID;
-
+	@Id
+	private String id;
 	private String senha;
+	@OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+	private Funcionario funcionario;
 
-	private void login() {
-
+	public String getId() {
+		return id;
 	}
 
-	public void getId() {
-
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public void getSenha() {
-
+	public String getSenha() {
+		return senha;
 	}
 
-	public void setId() {
-
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
-	public void setSenha() {
-
+	public Funcionario getFuncionario() {
+		return funcionario;
 	}
 
-}
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}

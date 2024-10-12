@@ -1,5 +1,7 @@
+package sistema.controller;
+
 public interface PedidoManager {
 
-	private void registrarPedido();
+	void registrarPedido();
 
 }

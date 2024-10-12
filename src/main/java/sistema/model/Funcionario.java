@@ -1,16 +1,27 @@
+package sistema.model;
+
+import jakarta.persistence.*;
+import sistema.controller.ClienteManager;
+import sistema.controller.PedidoManager;
+import sistema.repository.ClienteRepository;
+import sistema.repository.PedidoRepository;
+
+
+
 public class Funcionario extends Usuario implements ClienteManager, PedidoManager {
 
 	private String nome;
-
+	@Id
 	private String cpf;
-
 	private String telefone;
+	private Double salario;
 
-	private double salario;
+	@OneToOne
+	@JoinColumn(name = "usuario_fk", referencedColumnName = "id")
+
+	private Usuario usuario;
 
 	private Cliente cliente;
-
-	private ClienteRepository clienteRepository;
 
 	private ClienteRepository clienteRepository;
 
@@ -24,10 +35,6 @@ public class Funcionario extends Usuario implements ClienteManager, PedidoManage
 
 	}
 
-	private void cadastrarCliente() {
-
-	}
-
 	private void alterarStatus() {
 
 	}
@@ -36,52 +43,57 @@ public class Funcionario extends Usuario implements ClienteManager, PedidoManage
 
 	}
 
-	public void getNome() {
+	private void cadastrarCliente() {
 
 	}
 
-	public void getCpf() {
-
-	}
-
-	public void getTelefone() {
-
-	}
-
-	public void getSalario() {
-
-	}
-
-	public void setSalario() {
-
-	}
-
-	public void setNome() {
-
-	}
-
-	public void setCpf() {
-
-	}
-
-	public void setTelefone() {
-
-	}
-
-
-	/**
-	 * @see ClienteManager#alterarCliente()
-	 */
 	private void alterarCliente() {
 
 	}
 
-
-	/**
-	 * @see ClienteManager#removerCliente()
-	 */
 	private void removerCliente() {
 
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public Double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(Double salario) {
+		this.salario = salario;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }
