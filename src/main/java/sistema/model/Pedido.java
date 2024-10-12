@@ -1,56 +1,43 @@
-package sistema.model;
-
-import jakarta.persistence.*;
-
-@Entity
 public class Pedido {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idPedido;
-    private String tipo;
-    private Double preco;
-    private String status;
-    @ManyToOne
-    @JoinColumn(name = "cliente_fk", referencedColumnName = "id")
-    private Cliente cliente;
 
-    public Integer getIdPedido() {
-        return idPedido;
-    }
+	private String tipo;
 
-    public void setIdPedido(Integer idPedido) {
-        this.idPedido = idPedido;
-    }
+	private int quantidade;
 
-    public String getTipo() {
-        return tipo;
-    }
+	private double preco;
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+	private String status;
 
-    public Double getPreco() {
-        return preco;
-    }
+	public void getTipo() {
 
-    public void setPreco(Double preco) {
-        this.preco = preco;
-    }
+	}
 
-    public String getStatus() {
-        return status;
-    }
+	public void getQuantidade() {
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+	}
 
-    public Cliente getCliente() {
-        return cliente;
-    }
+	public void getPreco() {
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
+	}
+
+	public void getStatus() {
+
+	}
+
+	public void setTipo() {
+
+	}
+
+	public void setPreco() {
+
+	}
+
+	public void setQuantidade() {
+
+	}
+
+	public void setStatus() {
+
+	}
+
 }

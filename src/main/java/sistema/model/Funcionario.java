@@ -1,55 +1,87 @@
-package sistema.model;
+public class Funcionario extends Usuario implements ClienteManager, PedidoManager {
 
-import jakarta.persistence.*;
+	private String nome;
 
-@Entity
-public class Funcionario{
-    private String nome;
-    @Id
-    private String cpf;
-    private String telefone;
-    private Double salario;
-    @OneToOne
-    @JoinColumn(name = "usuario_fk", referencedColumnName = "id")
-    private Usuario usuario;
+	private String cpf;
 
-    public String getNome() {
-        return nome;
-    }
+	private String telefone;
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	private double salario;
 
-    public String getCpf() {
-        return cpf;
-    }
+	private Cliente cliente;
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+	private ClienteRepository clienteRepository;
 
-    public String getTelefone() {
-        return telefone;
-    }
+	private ClienteRepository clienteRepository;
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+	private PedidoRepository pedidoRepository;
 
-    public Double getSalario() {
-        return salario;
-    }
+	private void registrarPedido() {
 
-    public void setSalario(Double salario) {
-        this.salario = salario;
-    }
+	}
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
+	private void realizarLogin() {
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+	}
+
+	private void cadastrarCliente() {
+
+	}
+
+	private void alterarStatus() {
+
+	}
+
+	private void alterarInfoCliente() {
+
+	}
+
+	public void getNome() {
+
+	}
+
+	public void getCpf() {
+
+	}
+
+	public void getTelefone() {
+
+	}
+
+	public void getSalario() {
+
+	}
+
+	public void setSalario() {
+
+	}
+
+	public void setNome() {
+
+	}
+
+	public void setCpf() {
+
+	}
+
+	public void setTelefone() {
+
+	}
+
+
+	/**
+	 * @see ClienteManager#alterarCliente()
+	 */
+	private void alterarCliente() {
+
+	}
+
+
+	/**
+	 * @see ClienteManager#removerCliente()
+	 */
+	private void removerCliente() {
+
+	}
+
 }
